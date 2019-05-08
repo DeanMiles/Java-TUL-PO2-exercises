@@ -1,4 +1,4 @@
-# Java-TUL-PO2-exercises
-dmcs PO2 tasks for IT students
+# Java_TUL_PO2-exercises
+PO2 tasks for IT students (dmcs department)
 
 http://neo.dmcs.p.lodz.pl/po2/

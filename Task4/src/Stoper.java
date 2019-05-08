@@ -1,16 +1,15 @@
 class Stoper {
-    private long start;// czas stopu stopera
-    private long stop;// nazwa stopera
+    private long start;
+    private long stop;
     private String nazwa;
 
     public Stoper() {
         this("");
     }
 
-    public Stoper(String nazwa) {               // przypisujemy do pola nazwa przekazany łańcuch tekstowy
+    public Stoper(String nazwa) {               
         this.nazwa = nazwa;
     }
-// metoda uruchamiana przy starcie stopera
 
     public void start(){
         start = System.currentTimeMillis();
@@ -20,11 +19,11 @@ class Stoper {
         stop = System.currentTimeMillis();
     }
 
-    public double pobierzWynik(){
+    public double takeScore(){
         return (stop - start) / 1000.0;
     }
 
     public String toString(){
-        return nazwa + ": " + this.pobierzWynik() + " s.";
+        return nazwa + ": " + this.takeScore() + " s.";
     }
 }

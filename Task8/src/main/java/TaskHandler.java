@@ -1,6 +1,7 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.Socket;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,15 +17,18 @@ public class TaskHandler implements Runnable {
     final DataInputStream dis;
     final DataOutputStream dos;
     final DataInputStream time;
+    final Socket s;
     String toreturn;
     Date date = new Date();
-    public TaskHandler(long timeOfSleep, String received, DataInputStream dis, DataOutputStream dos, DataInputStream time)
+    public TaskHandler(Socket s, long timeOfSleep, String received, DataInputStream dis, DataOutputStream dos, DataInputStream time)
     {
+        this.s = s;
         this.received= received;
         this.timeOfSleep = timeOfSleep;
         this.dis = dis;
         this.dos = dos;
         this.time = time;
+
     }
 
     @Override
@@ -81,5 +85,6 @@ public class TaskHandler implements Runnable {
                 }
                 break;
         }
+        System.out.println("Message sent: \"" + toreturn + "\" to "+ s );
     }
 }

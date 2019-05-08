@@ -63,8 +63,7 @@ public class ClientHandler extends Thread
 
                 Date date = new Date();
                 diffInMillis = dateTask.getTime() - date.getTime();                                                     //counting the delay
-                System.out.println(diffInMillis);
-                Thread t = new Thread(new TaskHandler(diffInMillis, received, dis, dos, time));                         //Begin thread which control output to client and the time
+                Thread t = new Thread(new TaskHandler(s, diffInMillis, received, dis, dos, time));                         //Begin thread which control output to client and the time
                 t.start();
 
             } catch (IOException e) {
